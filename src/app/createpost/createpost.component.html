@@ -1,0 +1,129 @@
+<p-toast></p-toast>
+<div class="add-post-container">
+  <h2 class="mypostheading">Create Post</h2>
+</div>
+<form (ngSubmit)="submit()" [formGroup]="dogForm" class="example-form">
+  <div class="loader" *ngIf="!loading">
+    <div class="inline">
+      <div class="inline-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Animal Name</mat-label>
+          <input matInput name="dogName" formControlName="dogName" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="inline-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Age:(in month)</mat-label>
+          <input
+            matInput
+            type="number"
+            id="age"
+            name="age"
+            formControlName="age"
+            required
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="inline-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Location:</mat-label>
+          <input
+            matInput
+            type="text"
+            id="location"
+            name="location"
+            formControlName="location"
+            required
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="inline-form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Gender:</mat-label>
+          <mat-select
+            id="gender"
+            name="gender"
+            formControlName="gender"
+            required
+          >
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="inline-form-field">
+        <mat-form-field appearance="outline" >
+          <mat-label>Select Type:</mat-label>
+          <mat-select id="type" name="type" formControlName="type" required>
+            <mat-option value="cat">Cat</mat-option>
+            <mat-option value="dog">Dog</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="inline-form-field">
+        <mat-form-field appearance="outline" >
+          <mat-label>Breed:</mat-label>
+          <input
+            matInput
+            type="text"
+            id="breed"
+            name="breed"
+            formControlName="breed"
+            required
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="inline-form-field" >
+        <mat-form-field appearance="outline">
+          <mat-label>Medical History:</mat-label>
+          <textarea
+            matInput
+            id="medicalHistory"
+            name="medicalHistory"
+            formControlName="medicalHistory"
+            required
+          ></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="inline-form-field" >
+        <mat-form-field appearance="outline">
+          <mat-label>Description:</mat-label>
+          <textarea
+            matInput
+            id="description"
+            name="description"
+            formControlName="description"
+            required
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="inline-form-field" >
+        <input type="file" id="fileInput" (change)="onUpload($event)" class="hidden-input" required />
+        <p>Upload Pet Img:*</p>
+        <label for="fileInput" class="file-input-label" >
+          <mat-icon>attach_file</mat-icon>
+
+          <span *ngIf="!dogNameImg">Choose a file</span>
+          <span *ngIf="dogNameImg">{{dogNameImg}}</span>
+        </label>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="!dogForm.valid|| !isFileSelected"
+    >
+      Submit
+    </button>
+  </div>
+  <div class="loader-container" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+</form>

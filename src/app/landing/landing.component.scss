@@ -1,0 +1,506 @@
+@import url("https://fonts.googleapis.com/css2?family=Coiny&display=swap");
+body {
+  background: url(Final\ Landing.jpg);
+  background-size: 100%;
+  height: 3100px;
+  overflow: auto;
+}
+.container {
+  height: 100vh;
+}
+.background-image {
+  height: 100vh;
+  position: absolute;
+  max-width: 77%;
+  border-top-right-radius: 100%;
+  opacity: 30%;
+  z-index: -1;
+}
+.hero-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  z-index: 1;
+  padding-left: 15%;
+  border-radius: 5%;
+}
+.heading {
+  font-family: Coiny;
+  margin-top: 10%;
+  margin-left: 15%;
+  color: black;
+  line-height: 50px;
+}
+.heading button {
+  background: radial-gradient(
+    circle at 10% 50.5%,
+    rgb(255, 130, 47) 0%,
+    rgb(249, 21, 116) 90%
+  );
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 20px;
+  color: #f7f7f7;
+  font-size: 16px;
+  transform: 0.3s ease;
+  cursor: pointer;
+}
+.image {
+  width: 80%;
+}
+.title-link {
+  display: flex;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.nav-links-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-right: 10px;
+}
+.nav-links {
+  text-decoration: none;
+  font-size: 18px;
+  color: #000000;
+}
+.nav-links:hover {
+  font-weight: bold;
+}
+.header {
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.title {
+  margin-bottom: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: transparent;
+  margin-left: 2em;
+  background: radial-gradient(
+    circle at 10% 50.5%,
+    rgb(255, 130, 47) 0%,
+    rgb(249, 21, 116) 90%
+  );
+  background-clip: text;
+}
+/* app.component.css */
+.getstarted a {
+  color: black;
+  text-decoration: none;
+}
+.getstarted a:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.getstarted:hover {
+  background-color: black;
+}
+.slogan h1 {
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.discription {
+  font-weight: 500;
+}
+.scroll-watcher {
+  height: 5px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: radial-gradient(
+    circle at 10% 50.5%,
+    rgb(255, 130, 47) 0%,
+    rgb(249, 21, 116) 90%
+  );
+  width: 100%;
+  scale: 0 1;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}
+.slogan1 {
+  padding-top: 15%;
+  padding-left: 10%;
+  animation: fade-in1 linear;
+  animation-duration: 2s;
+}
+@keyframes fade-in1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.slogan2 {
+  padding-top: 23%;
+  padding-left: 55%;
+  animation: fade-in2 linear;
+  animation-timeline: scroll();
+}
+@keyframes fade-in2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.slogan3 {
+  padding-top: 40%;
+  padding-left: 10%;
+  animation: fade-in3 linear;
+  animation-timeline: view();
+}
+@keyframes fade-in3 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.slogan4 {
+  padding-top: 40%;
+  padding-left: 55%;
+  animation: fade-in4 linear;
+  animation-timeline: view();
+}
+@keyframes fade-in4 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Responisive
+@media screen and (min-width: 200px) and (max-width: 319px) {
+  .slogan2,
+  .slogan3,
+  .slogan4 {
+    display: none; /* Hide slogans 2, 3, and 4 by default */
+  }
+  body {
+    background-size: 100%;
+    height: 700px;
+    overflow: auto;
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 13%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+  .title {
+    margin-left: 0em;
+  }
+
+  .header {
+    padding: 20px 20px;
+  }
+  .nav-links-container {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 10px;
+  }
+  .heading button {
+    height: 40px;
+    width: 100px;
+  }
+  .banner1 img {
+    padding: 10%;
+    width: 100%;
+  }
+  .slogan1 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+    padding-bottom: 0%;
+    padding-top: 10%;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  .slogan2 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .slogan3 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-left: 10%;
+    margin: 20px;
+    margin-top: 25px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-right: 10%;
+  }
+  .slogan4 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px;
+    margin-top: 25px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .hero-section {
+    padding-left: 30%;
+    border-radius: 5%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .slogan2,
+  .slogan3,
+  .slogan4 {
+    display: none; /* Hide slogans 2, 3, and 4 by default */
+  }
+  body {
+    background-size: 100%;
+    height: 750px;
+    overflow: auto;
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 13%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+  .title {
+    margin-left: 0em;
+  }
+  .header {
+    padding: 20px 20px;
+  }
+  .nav-links-container {
+    padding-top: 5px;
+  }
+  .heading button {
+    height: 40px;
+    width: 100px;
+  }
+  .banner1 img {
+    padding: 10%;
+    width: 100%;
+  }
+  .slogan1 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+    padding-bottom: 0%;
+    padding-top: 10%;
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+  .slogan2 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .slogan3 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-left: 10%;
+    margin: 20px;
+    margin-top: 25px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-right: 10%;
+  }
+  .slogan4 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px;
+    margin-top: 25px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .hero-section {
+    padding-left: 30%;
+    border-radius: 5%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+  .slogan2,
+  .slogan3,
+  .slogan4 {
+    display: none; /* Hide slogans 2, 3, and 4 by default */
+  }
+  body {
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 13%,
+      rgba(255, 255, 255, 1) 100%
+    );
+
+    background-size: 100%;
+    height: 1180px;
+    overflow: auto;
+  }
+  .title {
+    // margin-left: 0em;
+  }
+  .header {
+    padding: 20px 20px;
+  }
+  .nav-links-container {
+    padding-top: 5px;
+  }
+  .heading button {
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+  }
+  .h2 {
+    font: 400 30px/38px Roboto, sans-serif;
+  }
+  .p2 {
+    font: 400 20px/24px Roboto, sans-serif;
+  }
+  .banner1 img {
+    padding: 10%;
+    width: 100%;
+  }
+  .slogan1 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+    padding-bottom: 0%;
+    padding-top: 10%;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  .slogan2 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 40px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+  }
+
+  .slogan3 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-left: 10%;
+    margin: 40px;
+    margin-top: 25px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  .slogan4 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 40px;
+    margin-top: 25px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+  }
+  .hero-section {
+    padding-left: 30%;
+    border-radius: 5%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .slogan2,
+  .slogan3,
+  .slogan4 {
+    display: none; /* Hide slogans 2, 3, and 4 by default */
+  }
+  body {
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 13%,
+      rgba(255, 255, 255, 1) 100%
+    );
+
+    background-size: 100%;
+    height: 1380px;
+    overflow: auto;
+  }
+  .title {
+    // margin-left: 0em;
+  }
+  .header {
+    padding: 20px 20px;
+  }
+  .nav-links-container {
+    padding-top: 5px;
+  }
+  .heading button {
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+  }
+  .h2 {
+    font: 400 33px/40px Roboto, sans-serif;
+  }
+  .p2 {
+    font: 400 22px/28px Roboto, sans-serif;
+  }
+  .banner1 img {
+    padding: 10%;
+    width: 100%;
+  }
+  .slogan1 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+    padding-bottom: 0%;
+    padding-top: 10%;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  .slogan2 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 40px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+  }
+
+  .slogan3 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-left: 10%;
+    margin: 40px;
+    margin-top: 25px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  .slogan4 {
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 40px;
+    margin-top: 25px;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    padding-left: 10%;
+  }
+  .hero-section {
+    padding-left: 30%;
+    border-radius: 5%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .banner1 {
+    display: none;
+  }
+}

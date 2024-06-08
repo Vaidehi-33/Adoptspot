@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px
+}
+
+img {
+  width: 400px;
+  height: 400px;
+  display: inline;
+  border: dotted;
+}
+.containerfile {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.file-input-label {
+  background: white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: rgb(90, 72, 72) solid 1px;
+}
+
+.file-input-label mat-icon {
+  margin-right: 8px;
+}
+.hidden-input {
+  opacity: 0;
+  width: 0;
+  position: absolute;
+  left: -9999px;
+}
+.edit-btn {
+  border: none;
+  outline: none;
+  background: radial-gradient(circle at 10% 50.5%, #ff822f 0%, #f91574 90%);
+  margin-top: 30px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: #f7f7f7;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+
+  mat-spinner {
+    margin-bottom: 10px;
+    stroke: #ff8c00;
+  }
+}

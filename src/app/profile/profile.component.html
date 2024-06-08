@@ -1,0 +1,104 @@
+<p-toast></p-toast>
+<div class="Profile" *ngIf="!loading">
+  <div class="sec1">
+    <div class="profile-initial-letters" *ngIf="!loading">
+      <div class="rounded-img-container" *ngIf="data.profileImg" (click)="profilePicture()">
+        <img class="rounded-img" [src]="data.profileImg" alt="Profile Image" />
+      </div>
+
+      <div *ngIf="!data.profileImg" class="rounded-img-container" (click)="profilePicture()">
+        <div class="initials-container">
+          <span class="initials">{{ data.firstName.charAt(0) }}{{ data.lastName.charAt(0) }}</span>
+        </div>
+      </div>
+
+      <div class="circle-icon" (click)="toggleProfileMenu()">
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="Toggle menu">
+          <mat-icon class="white-icon">add</mat-icon>
+        </button>
+        <mat-menu #profileMenu="matMenu" class="custom-dropdown">
+          <button mat-menu-item (click)="profilePicture()">
+            <mat-icon>cloud_upload</mat-icon>Upload Profile
+          </button>
+          <button mat-menu-item (click)="deleteProfile()">
+            <mat-icon>delete</mat-icon> Delete Profile
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+    <h1>{{ data.firstName + " " + data.lastName }}</h1>
+  </div>
+  <div class="sec2">
+    <mat-card class="Info-div">
+      <mat-card-header>
+        <mat-card-title> Personal Details </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="card-sec">
+          <div class="outer-container">
+            <div class="container1">
+              <span class="entities">Full Name</span>
+            </div>
+            <div class="container2">
+              <span class="val">{{ data.firstName }} {{ data.lastName }}</span>
+            </div>
+          </div>
+          <hr class="entity-line" />
+          <div class="outer-container">
+            <div class="container1">
+              <span class="entities">Email</span>
+            </div>
+            <div class="container2">
+              <span class="val">{{ data.email }}</span>
+            </div>
+          </div>
+          <hr class="entity-line" />
+          <div class="outer-container">
+            <div class="container1">
+              <span class="entities">Contact No.</span>
+            </div>
+            <div class="container2">
+              <span class="val">{{ data.mobileNumber }}</span>
+            </div>
+          </div>
+          <hr class="entity-line" />
+          <div class="outer-container">
+            <div class="container1">
+              <span class="entities">City</span>
+            </div>
+            <div class="container2">
+              <span class="val">{{ data.city }}</span>
+            </div>
+          </div>
+          <hr class="entity-line" />
+          <div class="outer-container">
+            <div class="container1">
+              <span class="entities">State</span>
+            </div>
+            <div class="container2">
+              <span class="val">{{ data.state }}</span>
+            </div>
+          </div>
+          <hr class="entity-line" />
+          <div class="outer-container">
+            <div class="container1">
+              <span class="entities">Country</span>
+            </div>
+            <div class="container2">
+              <span class="val">{{ data.country }}</span>
+            </div>
+          </div>
+
+          <hr class="entity-line" />
+          <div class="edit-container">
+            <button class="edit-btn" (click)="EditProfile()">Edit</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div class="loader" *ngIf="loading">
+  <mat-spinner> </mat-spinner>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,82 @@
+<div class="container" *ngIf="!loading">
+  <!-- *ngIf="dataSource.data.length > 0" -->
+  <div class="table-container mat-elevation-z8">
+    <table mat-table matSort aria-label="Elements" [ngClass]="'alternate-rows'">
+     
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let row">{{ row.firstName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Adopter Email</th>
+        <td mat-cell *matCellDef="let row" (click)="toggleCell(row)">{{ row.email }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="mobileNumber">
+        <th mat-header-cell *matHeaderCellDef>Adopter<br> Contact No.</th>
+        <td mat-cell *matCellDef="let row">{{ row.mobileNumber }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Messages">
+        <th mat-header-cell *matHeaderCellDef>Messages</th>
+        <td mat-cell *matCellDef="let row" (click)="toggleMessage(row)">{{ row.message }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+       <ng-container matColumnDef="bookmark">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td
+          mat-cell
+          *matCellDef="let row; let i = index"
+          style="text-align: center"
+        >
+          <i
+            *ngIf="!row.isMarked"
+            class="pi pi-star"
+            style="font-size: 1.3rem"
+            (click)="onMarkClickHandler(i)"
+          ></i>
+          <i
+            *ngIf="row.isMarked"
+            class="pi pi-star-fill"
+            style="
+              font-size: 1.3rem;
+              color: transparent;
+              background: radial-gradient(
+                circle at 10% 50.5%,
+                rgb(255, 130, 47) 0%,
+                rgb(249, 21, 116) 90%
+              );
+              background-clip: text;
+            "
+            (click)="onMarkClickHandler(i)"
+          ></i>
+        </td>
+      </ng-container>
+    </table>
+
+    <mat-paginator
+      class="paginator"
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[10, 20, 30]"
+      aria-label="Select page"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+
+  <!-- <div *ngIf="dataSource.data.length === 0" class="message">
+    <h2>
+      No applicants for now. Let's wait for now :)
+    </h2>
+  </div> -->
+</div>
+<div class="loader" *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</div>
+<router-outlet></router-outlet>

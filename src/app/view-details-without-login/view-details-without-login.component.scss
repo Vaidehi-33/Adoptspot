@@ -1,0 +1,167 @@
+.carousel-details-container {
+  display: flex;
+
+  .details-container {
+    flex: 1;
+    margin-left: 16px;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details-container {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.accordion-container {
+  width: 500px;
+  margin-top: 16px;
+}
+
+.buttons-container {
+  width: 100%;
+}
+
+.cancel-button,
+.install-button {
+  width: 150px;
+  margin-top: 8px;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(45deg, #f91592, rgb(255, 130, 47));
+}
+
+.cancel-button:hover {
+  background: linear-gradient(45deg, #f91592, rgb(255, 130, 47));
+  color: rgb(255, 255, 255);
+}
+
+.install-button:hover {
+  background: linear-gradient(45deg, #f91592, rgb(255, 130, 47));
+  color: rgb(255, 255, 255);
+}
+
+.heading {
+  color: black;
+  font: 3em lexend;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+img {
+  // width="600px" height="424px"
+  width: 600px;
+  height: 424px;
+}
+
+@media screen and (max-width:319px) {
+  .carousel-details-container {
+    flex-direction: column;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  img {
+    width: 90%;
+    height: 220px;
+  }
+
+  .heading {
+    text-align: center;
+    font: 1.5em lexend;
+  }
+
+  .accordion-container {
+    width: 100%;
+
+  }
+}
+
+@media screen and (min-width:320px) and (max-width:480px) {
+  .carousel-details-container {
+    flex-direction: column;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .heading {
+    text-align: center;
+    font: 2em lexend;
+  }
+
+  .accordion-container {
+    width: 100%;
+
+  }
+}
+
+@media screen and (min-width:481px) and (max-width:768px) {
+  .carousel-details-container {
+    flex-direction: column;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 400px;
+  }
+
+  .heading {
+    text-align: center;
+    font: 3em lexend;
+  }
+
+  .accordion-container {
+    width: 100%;
+
+  }
+}
+
+@media screen and (min-width:769px) and (max-width:1024px) {
+  .carousel-details-container {
+    flex-direction: column;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 424px;
+  }
+
+  .heading {
+    text-align: center;
+    font: 3em lexend;
+  }
+
+  .accordion-container {
+    width: 100%;
+
+  }
+}

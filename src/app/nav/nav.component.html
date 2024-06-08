@@ -1,0 +1,51 @@
+<header class="header" [class.page-scroll-header]="isPageScroll">
+  <div class="header-title-container">
+    <a routerLink="/home" class="title-link">
+      <h1 class="title">
+        <img src="assets/pow.png" width="30px" height="25px" style="margin-right: 5px" />AdoptSpot
+      </h1>
+    </a>
+    <button class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <ng-content />
+
+  <div class="header-links-container" [class.side-panel]="isMenuOpen" [class.show-menu]="isMenuOpen">
+    <ul class="nav-list">
+      <li class="nav-link" (click)="navigateToHome()" style="cursor: pointer">
+        Home
+      </li>
+      <li class="nav-link" (click)="navigateToLogin()" style="cursor: pointer" *ngIf="!isAuthenticated">
+        Login
+      </li>
+      <li class="nav-link" (click)="navigateToRegister()" style="cursor: pointer" *ngIf="!isAuthenticated">
+        Register
+      </li>
+      <li class="profile-dropdown" *ngIf="isAuthenticated" style="cursor: pointer">
+        My Profile
+        <ul class="dropdown-options" *ngIf="isAuthenticated">
+          <li (click)="navigateToMyProfile()">Profile</li>
+          <li (click)="navigateToMyPosts()">Posts</li>
+          <li (click)="navigateToMyAppliedPosts()">Applications</li>
+          <li (click)="navigateToMyFavorites()">Favorites</li>
+        </ul>
+      </li>
+      <li (click)="notification()" *ngIf="isAuthenticated" class="nav-link">
+        Notification
+        <div *ngIf="notificationsLength > 0" style="
+            background-color: rgb(0, 140, 255);
+            height: 0.4rem;
+            width: 0.4rem;
+            border-radius: 100%;
+          "></div>
+      </li>
+      <li class="nav-link" (click)="logout()" style="cursor: pointer" *ngIf="isAuthenticated">
+        Logout
+      </li>
+    </ul>
+  </div>
+
+</header>

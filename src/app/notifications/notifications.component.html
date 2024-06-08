@@ -1,0 +1,35 @@
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="top-bar">
+        <div class="title">
+          <p class="title-text">Notifications</p>
+        </div>
+      </div>
+      <div class="single-box" *ngIf="!isLoading">
+        <div
+          style="width: 100%; text-align: center"
+          *ngIf="notifications.length === 0"
+        >
+          <h1 style="font-size: 20px; color: grey">No notifications found</h1>
+        </div>
+        <div
+          class="notification-item"
+          style="cursor: pointer"
+          (click)="navigateToReceivedApplication(notification)"
+          *ngFor="let notification of notifications"
+        >
+          <div class="box-text">
+            <p class="message">
+              {{ notification.user.firstName }} applied to
+              {{ notification.post.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="loader" *ngIf="isLoading">
+        <mat-spinner> </mat-spinner>
+      </div>
+    </div>
+  </div>
+</body>

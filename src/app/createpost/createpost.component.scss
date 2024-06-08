@@ -1,0 +1,233 @@
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+.example-form {
+ max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 2px #f91592, 0 0 5px rgb(255, 130, 47);
+  background-color: #ffffff;
+  border-radius: 8px;
+
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  min-height: 50vh;
+}
+
+.example-form mat-form-field {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.example-form button {
+  margin-top: 20px;
+}
+.add-post-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 4rem 1rem 4.2rem;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.inline {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: grid;
+  justify-content: space-between;
+  align-items: flex-start;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-column-gap: 7px;
+}
+
+.mypostheading {
+  margin-bottom: 0;
+  color: grey;
+}
+.file-input-container {
+  position: relative;
+  display: inline-block;
+}
+
+.file-input-label {
+  background: white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: rgb(90, 72, 72) solid 1px;
+}
+
+.file-input-label mat-icon {
+  margin-right: 8px;
+}
+.loader-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 50px;
+}
+.hidden-input {
+  opacity: 0;
+  width: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+@media screen and (min-width: 200px) and (max-width: 350px) {
+
+  .mat-mdc-text-field-wrapper {
+    width: 90%;
+}
+
+//   .mdc-text-field--outlined .mat-mdc-form-field-infix, .mdc-text-field--no-label .mat-mdc-form-field-infix {
+//     width: 150px;
+// }
+  // .mat-form-field {
+  //   width: 1px;
+  //   height: 8px; /* Decrease the width of the form fields */
+  // }
+  // .mat-form-field-label {
+  //   font-size: 3px; /* Decrease the font size of the labels */
+  // }
+
+  .example-form {
+    max-width:250px;
+     padding: 20px;
+     min-height: 50vh;
+     margin-left: 20px;
+     margin-right: -230px;
+   }
+
+   .inline {
+    margin-left: -30px;
+    margin-right: 60px;
+    padding: 20px;
+    grid-template-columns: repeat(1, 1fr); /* 2 columns */
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 6px;
+    width: 10px; 
+    
+   }
+
+   
+}
+
+@media screen  and (min-width: 350px) and (max-width: 415px) {
+
+  .example-form {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    max-width: 300px;
+    padding: 5px;
+    min-height: 50vh;
+    margin-left: 30px;
+    margin-right: -90px;
+   }
+
+  .inline {
+    margin-left: 10px;
+    margin-right: 20px;
+    padding: 10px;
+    grid-template-columns: repeat(1, 1fr); /* 2 columns */
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 6px;
+    
+   }
+}
+
+@media screen and (min-width: 415px) and (max-width: 480px) {
+
+  .mat-mdc-form-field-infix {
+    width: 150px;
+  }
+
+  .example-form {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    max-width: 400px;
+    padding: 5px;
+    min-height: 50vh;
+    margin-left: 10px;
+    margin-right: -290px;
+   }
+
+  .inline {
+    margin-left: 20px;
+    margin-right: -20px;
+    padding: 10px;
+    grid-template-columns: repeat(1, 1fr); /* 2 columns */
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 6px;
+    
+   }
+}
+
+@media screen and (min-width: 480px) and (max-width: 570px) {
+  .example-form {
+    transform: translate(-20px, 10px);
+    max-width: 400px;
+    padding: 50px;
+    min-height: 50vh;
+    margin-left: 50px;
+    margin-right: -260px;
+   }
+
+   .inline {
+    // margin-left: 10px;
+    // margin-right: 10px;
+    padding-left: -10px;
+    grid-template-columns: repeat(1, 0.6fr); /* 2 columns */
+    grid-template-rows: repeat(5, 0.6fr);
+    column-gap: 6px;
+    
+   }
+}
+
+@media screen and (min-width: 570px) and (max-width: 700px) {
+  .inline {
+    max-width: 800px;
+    margin-right: -50px;
+    margin-left: 10px ;
+    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 6px;
+    
+   }
+
+   .example-form[_ngcontent-ng-c97902503] {
+    max-width: 1000px;
+    margin: 10px;
+    padding: 20px;
+    min-height: 50vh;
+}
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 920px) {
+  .inline {
+    max-width: 1000px;
+    margin-right: -50px;
+    margin-left: 10px ;
+    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    column-gap: 6px;
+    
+   }
+
+   .example-form {
+    max-width: 1000px;
+    margin: 10px;
+    padding: 50px;
+    min-height: 50vh;
+}
+}
+

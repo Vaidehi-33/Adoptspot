@@ -1,0 +1,282 @@
+.body {
+  min-height: 100vh;
+}
+
+.container {
+  min-height: calc(100vh - 100px); /* Adjust as per your footer height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.table-container {
+  width: 70%;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 7px;
+  margin-bottom: 50px;
+  border-color: black;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: 20px;
+    color: rgb(40, 38, 38);
+    text-align: center !important;
+    border: 1px solid #ddd;
+    border-bottom: 3px solid #ddd;
+    background-color: rgb(251, 201, 170);    
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+  }
+
+  td {
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+}
+
+
+
+.mat-sort-header .mat-mdc-cell{
+  text-align: center;
+}
+.mat-mdc-row .mat-mdc-cell {
+  cursor: pointer;
+  color: black;
+}
+
+
+.paginator {
+  position: absolute;
+  bottom: 90px;
+  right: 20px;
+  z-index: 1000;
+
+}
+// ::ng-deep .mat-mdc-button-touch-target:hover{
+//   color: rbg(253, 208, 179);
+// }
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+
+  mat-spinner {
+    margin-bottom: 10px;
+    stroke: #ff8c00;
+  }
+}
+
+
+.message-container {
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+@media screen and (min-width:200px) and (max-width:320px){
+  .table-container{
+    width:95%;
+    padding:10px;
+    overflow: auto;
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+    td {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+  .paginator{
+    position: absolute;
+    display: flex;
+    bottom: 90px;
+    right: 20px;
+    z-index: 1000;
+  }
+}
+@media screen and (min-width:320px) and (max-width:480px){
+  .table-container{
+    width:95%;
+    padding:10px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+    td {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width:481px) and (max-width:768px){
+  .table-container{
+    width:95%;
+    padding:10px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+    td {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width:769px) and (max-width:1023px){
+  .table-container{
+    width:95%;
+    padding:10px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 12px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+    td {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width:1024px) and (max-width:1200px){
+  .table-container{
+    width:95%;
+    padding:10px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 12px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+    td {
+      padding: 5px;  
+      font-weight: bold;
+      font-size: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}
+
+// @media screen and (min-width:1200px){
+//   .table-container{
+//     width:70%;
+//     padding:10px;
+//     overflow: auto;
+//     th {
+//       padding: 5px;  
+//       font-weight: bold;
+//       font-size: 12px;
+//       margin-left: auto;
+//       margin-right: auto;
+//       white-space: nowrap;
+//       text-align: center;
+//     }
+//     td {
+//       padding: 5px;  
+//       font-weight: bold;
+//       font-size: 10px;
+//       margin-left: auto;
+//       margin-right: auto;
+//       white-space: nowrap;
+//       text-align: center;
+//     }
+//   }
+// }

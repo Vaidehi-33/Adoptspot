@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Profile {
+  display: flex;
+  height: 100%;
+}
+
+.sec2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Info-div {
+  width: 650px;
+  height: 400px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 2px #f91592, 0 0 5px rgb(255, 130, 47);
+}
+
+mat-card {
+  border-radius: 10px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: rgb(88, 87, 87);
+}
+
+.card-sec {
+  display: flex;
+  width: 85%;
+  margin-left: 30px;
+  flex-direction: column;
+}
+
+.outer-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.container1 {
+  width: 30%;
+}
+
+.container2 {
+  width: 60%;
+}
+
+.container3 {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.edit-icon {
+  font-size: 24px;
+  background: radial-gradient(circle at 10% 50.5%, rgb(255, 130, 47) 0%, rgb(249, 21, 116) 90%);
+  color: transparent;
+  background-clip: text;
+  margin-top: 8px;
+}
+
+.entities {
+  font-weight: bold;
+  color: rgb(109, 109, 109);
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.val {
+  margin-left: 50px;
+  font-size: 14px;
+  color: black;
+}
+
+.entity-line {
+  width: 85%;
+  border-bottom: 1.5px solid transparent;
+  margin-left: 0;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  mat-spinner {
+    margin-bottom: 10px;
+    stroke: #ff8c00;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.save-btn {
+  border: none;
+  outline: none;
+  background: radial-gradient(circle at 10% 50.5%,
+      #ff822f 0%,
+      #f91574 90%);
+  padding: 7px 20px;
+  border-radius: 30px;
+  color: #f7f7f7;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.save-btn:hover {
+  background: radial-gradient(circle at 10% 50.5%,
+      #f91574 0%,
+      #ff822f 90%);
+}

@@ -1,0 +1,60 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+@font-face {
+  font-family: "Mona-Sans";
+  src: url("assets/fonts/Mona-Sans.woff2") format("woff2"),
+    url("assets/fonts/Mona-Sans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  //font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.p-accordion .p-accordion-header .p-accordion-header-link {
+  background-color: #ffecce;
+  color: black;
+}
+
+.add-to-favorites .p-button {
+  background-color: #ff4b4b;
+  border-style: none;
+}
+.apply .p-button {
+  background-color: #ff9f00;
+  border-style: none;
+}
+
+.submit .p-button {
+  border: none;
+  outline: none;
+  background: radial-gradient(circle at 10% 50.5%, #ff822f 0%, #f91574 90%);
+  padding: 10px;
+  border-radius: 30px;
+  color: #f7f7f7;
+  font-size: 16px;
+  transform: 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: none;
+}
+
+.isSubmitted .p-button-label {
+  margin-left: -10px;
+}
+
+.submit .p-button:hover {
+  background: radial-gradient(circle at 10% 50.5%, #f91574 0%, #ff822f 90%);
+  transition: 0.3s;
+}
+
+* {
+  font-family: "Mona-Sans", sans-serif;
+}
+h1 {
+  font-family: "Mona-Sans", sans-serif;
+}

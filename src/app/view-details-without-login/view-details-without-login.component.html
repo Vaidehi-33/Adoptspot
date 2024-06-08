@@ -1,0 +1,69 @@
+<h2 mat-dialog-title>{{ data.name }}'s Details</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="page-container">
+    <ng-container *ngIf="isLoading">
+      <app-viewdetails-skeleton />
+    </ng-container>
+    <ng-container *ngIf="!isLoading">
+      <div class="main-container">
+        <div class="carousel-details-container">
+          <img src="{{ data.imageUrl }}" />
+          <div class="details-container">
+            <b>
+              <h1 class="heading">{{ data.name }}</h1>
+            </b>
+            <div class="description-container">
+              <div class="text-container">
+                <p class="title" style="color: black">Age:</p>
+                <p style="color: black">{{ data.age }}</p>
+              </div>
+              <div class="text-container">
+                <p class="title" style="color: black">Gender:</p>
+                <p style="color: black">{{ data.gender }}</p>
+              </div>
+              <div class="text-container">
+                <p class="title" style="color: black">Type:</p>
+                <p style="color: black">{{ data.animalType }}</p>
+              </div>
+              <div class="text-container">
+                <p class="title" style="color: black">Breed:</p>
+                <p style="color: black">{{ data.breed }}</p>
+              </div>
+              <div class="text-container">
+                <p class="title" style="color: black">Location:</p>
+                <p style="color: black">{{ data.location }}</p>
+              </div>
+              <div class="text-container">
+                <p class="title" style="color: black">Posted on:</p>
+                <p style="color: black">{{ data.createdAt }}</p>
+              </div>
+
+              <div class="accordion-container">
+                <p-accordion>
+                  <p-accordionTab header="Physical Condition">
+                    <p>
+                      {{ data.medicalHistory }}
+                    </p>
+                  </p-accordionTab>
+                  <p-accordionTab header="Description">
+                    <p>
+                      {{ data.description }}
+                    </p>
+                  </p-accordionTab>
+                </p-accordion>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button class="cancel-button" (click)="onApplyClick()" style="color: white">
+    Add To Favorites
+  </button>
+  <button mat-button cdkFocusInitial class="install-button" (click)="onApplyClick()" style="color: white">
+    Apply
+  </button>
+</mat-dialog-actions>

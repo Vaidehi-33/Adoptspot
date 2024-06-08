@@ -1,0 +1,34 @@
+<div class="loader" *ngIf="!loading">
+  <h1>Upload Profile</h1>
+  <div class="container">
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="Uploaded Image" />
+    <img *ngIf="!imageUrl" src="assets/emptyprofile.jpg" alt="Default Image" />
+  </div>
+  <div class="containerfile">
+    <div class="inline-form-field" style="margin-top: 20px">
+      <input
+        type="file"
+        id="fileInput"
+        (change)="onUpload($event)"
+        class="hidden-input"
+      />
+      <label for="fileInput" class="file-input-label" style="margin-top: 7px">
+        <mat-icon>attach_file</mat-icon>
+        <span>Choose a file</span>
+      </label>
+    </div>
+    <button
+      (click)="saveprofile()"
+      mat-fab
+      extended
+      color="warn"
+      style="margin-left: 20px; margin-top: 20px"
+    >
+      Save
+    </button>
+  </div>
+</div>
+<div class="loader" *ngIf="loading">
+  <h1>Uploading Profile....!</h1>
+  <mat-spinner> </mat-spinner>
+</div>

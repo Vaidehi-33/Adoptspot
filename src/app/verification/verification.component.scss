@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url(img.jpg);
+  background-size: 100%;
+  min-height: 100vh;
+}
+
+nav {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: transparent;
+  margin-left: 2em;
+  background: radial-gradient(circle at 10% 50.5%, #ff822f 0%, #f91574 90%);
+  background-clip: text;
+  padding-top: 1%;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  gap: 10px;
+  width: 22rem;
+  background: rgb(0, 0, 0, 0);
+  padding: 3rem 2rem;
+  border: 3px solid #f91574;
+  border-left-color: (#f91574 50% #ff822f 50%);
+  border-bottom-color: #ff822f;
+  border-radius: 20px;
+  position: relative;
+}
+
+.title {
+  font: lem sans-sent;
+  background: radial-gradient(circle at 10% 50.5%, #f91574 0%, #ff822f 90%);
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+  border: none;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label input {
+  width: 100%;
+  padding: 18px 17px 9px 17px;
+  outline: none;
+  border: 1.5px solid #6a767e;
+  border-radius: 30px;
+}
+
+.form label input + span {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  color: #444a4f;
+  font-size: 0.9em;
+  transition: 0.3s ease;
+}
+
+.form label input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label input:focus + span,
+.form label input:valid + span {
+  top: 2px;
+  font-size: 0.7em;
+  font-weight: 300;
+  background: radial-gradient(circle at 10% 50.5%, #ff822f 0%, #f91574 90%);
+  background-clip: text;
+  color: transparent;
+}

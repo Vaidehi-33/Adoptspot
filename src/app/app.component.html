@@ -1,0 +1,7 @@
+<ng-container *ngIf="showNavbar">
+  <app-nav></app-nav>
+</ng-container>
+<router-outlet></router-outlet>
+<ng-container *ngIf="showFooter">
+<app-footer [isProfilePage]="isProfilePage"></app-footer>
+</ng-container>

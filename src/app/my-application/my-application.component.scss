@@ -1,0 +1,421 @@
+.body {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 3rem 4rem;
+  gap: 20px;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  max-height: 425px;
+  max-width: 28rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  gap: 10px;
+  transition: linear 0.2s;
+  background: white; /* Set a transparent background or your desired background color */
+}
+
+.card:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.card-image {
+  width: 416px;
+  height: 327px;
+  border-radius: 5px;
+}
+
+.card-content-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.card-delete-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  color: rgb(255, 30, 60);
+  transition: 0.25s linear;
+}
+
+.card-delete-container:hover {
+  transform: scale(1.3);
+}
+
+.card-avatar {
+  background: linear-gradient(101.98deg, #ff6a17 31.32%, #ff1717 102.73%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.card-avatar p {
+  margin-bottom: 0;
+  font-weight: bold;
+  color: white;
+  font-size: 1.5em;
+}
+
+.card-text-container {
+  line-height: 25px;
+  padding: 4px;
+  flex: 1;
+}
+
+.card-text-container .card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-text-container h2,
+p {
+  margin-bottom: 0;
+}
+
+.card-sub-title {
+  color: grey;
+}
+
+.card-text {
+  color: gray;
+}
+
+.add-post-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 4rem 1rem 4.2rem;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.mypostheading {
+  margin-bottom: 0;
+  color: grey;
+}
+
+.message-container {
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.message {
+  color: rgb(93, 92, 92);
+}
+
+.message-link {
+  text-decoration: none;
+  transition: 0.4s ease-out;
+}
+
+.message-link h1:hover {
+  color: transparent;
+  background: radial-gradient(
+    circle at 10% 50.5%,
+    rgb(255, 130, 47) 0%,
+    rgb(249, 21, 116) 90%
+  );
+  background-clip: text;
+}
+
+// RESPONSIVE DESIGN
+
+@media screen and (min-width: 200px) and (max-width: 400px) {
+  .body {
+    grid-template-columns: repeat(1, 2fr);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+  }
+  .card-text-container .card-title {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .card-avatar {
+    height: 35px;
+    width: 35px;
+  }
+  .card-text-container {
+    line-height: 20px;
+    padding: 4px;
+    flex: 1;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  .body {
+    grid-template-columns: repeat(1, 2fr);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1080px) {
+  .body {
+    grid-template-columns: repeat(2, 2fr);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+  .body {
+    grid-template-columns: repeat(2, 2fr);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 327px;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (min-width: 1266px) and (max-width: 1400px) {
+  .body {
+    grid-template-columns: repeat(3, 2fr);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 327px;
+    border-radius: 5px;
+  }
+}
+
+// .body {
+//   min-height: 100vh;
+// }
+
+// .example-card {
+//   max-width: 400px;
+//   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// }
+
+// .card-container {
+//   display: flex;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+//   padding: 1rem;
+// }
+
+// .card {
+//   transition: transform 0.3s;
+//   margin: 10px;
+// }
+
+// .card:hover {
+//   transform: scale(1.03);
+// }
+
+// .card-content {
+//   display: flex;
+//   flex-direction: column;
+//   position: relative; /* Added line */
+// }
+
+// .delete-button-container {
+//   position: absolute;
+//   top: 10px; /* Adjust as needed */
+//   right: 10px; /* Adjust as needed */
+//   height: 50px;
+//   width: 50px;
+//   border-radius: 5px;
+//   color: rgb(255, 30, 60);
+//   transition: 0.25s linear;
+// }
+
+// .delete-button-container:hover {
+//   transform: scale(1.3);
+// }
+
+// .add-post-container {
+//   display: flex;
+//   flex-direction: row;
+//   padding: 1rem 4rem 1rem 4.2rem;
+//   justify-content: space-between;
+//   align-items: center;
+//   border-bottom: 1px solid rgb(218, 218, 218);
+// }
+
+// .mypostheading {
+//   margin-bottom: 0;
+//   color: grey;
+// }
+
+// .message-container {
+//   min-height: 18rem;
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+//   align-items: center;
+// }
+
+// .message {
+//   color: rgb(93, 92, 92);
+// }
+
+// .message-link {
+//   text-decoration: none;
+//   transition: 0.4s ease-out;
+// }
+
+// .message-link h1:hover {
+//   color: transparent;
+//   background: radial-gradient(
+//     circle at 10% 50.5%,
+//     rgb(255, 130, 47) 0%,
+//     rgb(249, 21, 116) 90%
+//   );
+//   background-clip: text;
+// }
+// .body {
+//   min-height: 100vh;
+// }
+
+// .example-card {
+//   max-width: 400px;
+//   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// }
+
+// .card-container {
+//   display: flex;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+//   padding: 1rem;
+// }
+
+// .card {
+//   transition: transform 0.3s;
+//   margin: 10px;
+// }
+
+// .card:hover {
+//   transform: scale(1.03);
+// }
+
+// .card-content {
+//   display: flex;
+//   flex-direction: column;
+//   position: relative; /* Added line */
+// }
+
+// .delete-button-container {
+//   position: absolute;
+//   top: 20px;
+//   right: 5px;
+//   height: 50px;
+//   width: 50px;
+//   border-radius: 5px;
+//   color: rgb(255, 30, 60);
+//   transition: 0.25s linear;
+// }
+
+// .delete-button-container:hover {
+//   transform: scale(1.3);
+// }
+
+// .add-post-container {
+//   display: flex;
+//   flex-direction: row;
+//   padding: 1rem 4rem 1rem 4.2rem;
+//   justify-content: space-between;
+//   align-items: center;
+//   border-bottom: 1px solid rgb(218, 218, 218);
+// }
+
+// .mypostheading {
+//   margin-bottom: 0;
+//   color: grey;
+// }
+
+// .message-container {
+//   min-height: 18rem;
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+//   align-items: center;
+// }
+
+// .message {
+//   color: rgb(93, 92, 92);
+// }
+
+// .message-link {
+//   text-decoration: none;
+//   transition: 0.4s ease-out;
+// }
+
+// .message-link h1:hover {
+//   color: transparent;
+//   background: radial-gradient(
+//     circle at 10% 50.5%,
+//     rgb(255, 130, 47) 0%,
+//     rgb(249, 21, 116) 90%
+//   );
+//   background-clip: text;
+// }

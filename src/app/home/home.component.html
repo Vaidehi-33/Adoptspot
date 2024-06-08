@@ -1,0 +1,106 @@
+<div>
+  <app-nav>
+    <div class="search-bar-container">
+      <!-- key down event is tracked for whole div -->
+      <div
+        class="search-bar-inner-container"
+        (keydown)="onKeyDownHandler($event)"
+        [class.search-bar-focused]="isDropDownVisible"
+      >
+        <div class="search-bar">
+          <mat-icon>search</mat-icon>
+          <!-- dropdown is made visible when the input is focused -->
+          <input
+            (focus)="onSearchBarFocusHandler()"
+            type="text"
+            placeholder="Search by type (cat / dog)"
+            [(ngModel)]="search"
+            (input)="onSearchBarInputChangeHandler()"
+            #searchInput
+          />
+        </div>
+        <!-- container for list of items -->
+        <div class="search-bar-drop-down" *ngIf="isDropDownVisible">
+          <!-- list of suggestions -->
+          <!-- when pressed "UP arrow key or down arrow key" .list-item-focused is applied as selected Index changes  -->
+          <p
+            class="dropdown-item"
+            *ngFor="let searchSuggestion of searchSuggestions; let i = index"
+            [class.list-item-focused]="i === selectedIndex"
+            (click)="onItemClickHandler(searchSuggestion)"
+          >
+            {{ searchSuggestion }}
+          </p>
+          <!-- if no suggestions are found i.e length of arr is 0 then show this message instead of above item -->
+          <p class="dropdown-item" *ngIf="searchSuggestions.length === 0">
+            No animal type found
+          </p>
+        </div>
+      </div>
+    </div>
+  </app-nav>
+
+  <div class="body" (click)="onPageClickHandler()">
+    <ng-container *ngIf="isLoading">
+      <app-card-skeleton />
+      <app-card-skeleton />
+      <app-card-skeleton />
+      <app-card-skeleton />
+      <app-card-skeleton />
+      <app-card-skeleton />
+    </ng-container>
+
+    <ng-container *ngIf="!isLoading">
+      <div class="message-container" *ngIf="posts.length === 0">
+        <h1 class="message">Currently, There are no posts available...</h1>
+      </div>
+      <div
+        class="card"
+        *ngFor="let post of posts"
+        (click)="
+          onCardClickHandler(
+            post.id,
+            post.age,
+            post.animalType,
+            post.breed,
+            post.createdAt,
+            post.description,
+            post.gender,
+            post.imageUrl,
+            post.location,
+            post.medicalHistory,
+            post.name
+          )
+        "
+        (mouseenter)="onCardHover(true)"
+        (mouseleave)="onCardHover(false)"
+      >
+        <img [src]="post.imageUrl" [alt]="post.name" class="card-image" />
+        <div class="card-content-container">
+          <div class="card-avatar">
+            <p>{{ post.firstName.charAt(0).toUpperCase() }}</p>
+          </div>
+
+          <div class="card-text-container">
+            <p class="card-title">{{ post.name }}</p>
+            <p class="card-text">{{ post.location }}</p>
+          </div>
+
+    
+
+          <!-- <div *ngIf="isHovered" class="overlay">
+            <mat-icon>touch_app</mat-icon>
+            <p>Click me</p>
+          </div> -->
+        </div>
+        <!-- <div class="buttons-container center-buttons">
+          <p-button [disabled]="details.isAddedToFavorite" class="add-to-favorites"
+            [loading]="favoriteLoading" (onClick)="onAddToFavoritesClickHandler($event)">
+            <mat-icon *ngIf="!favoriteLoading && !details.isAddedToFavorite">favorite</mat-icon>
+          </p-button>
+        </div> -->
+      </div>
+    </ng-container>
+
+  </div>
+</div>

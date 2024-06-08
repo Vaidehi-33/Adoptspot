@@ -1,0 +1,101 @@
+<body>
+  <div class="scroll-watcher"></div>
+  <div class="container">
+    <!-- <img
+      class="background-image"
+      src="assets/background.jpg"
+      alt="background image"
+    /> -->
+    <header class="header">
+      <a routerLink="#" class="title-link">
+        <h1 class="title">
+          <img src="assets/pow.png" width="30px" height="25px" style="margin-right: 5px" />AdoptSpot
+        </h1>
+      </a>
+      <div class="nav-links-container">
+        <a routerLink="/login" class="nav-links" *ngIf="!isAuthenticated" style="font-size: 17px">
+          Login
+        </a>
+        <a style="font-size: 17px; margin-left: 10px" routerLink="/register" class="nav-links" *ngIf="!isAuthenticated">
+          Register
+        </a>
+      </div>
+    </header>
+    <div class="banner1">
+      <img src="../../assets/Images/Dogcat-removebg-preview.png" alt="Image is not available">
+    </div>
+    <div class="slogan1">
+      <div class="slogan">
+        <h1 class="h2">
+          Adopt a pet and experience <br />
+          the power of love.
+        </h1>
+      </div>
+      <div class="discription">
+        <p class="p2">
+          Open your heart, and adopt a furry friend. Give a home, give hope.
+          <br />
+          Make adoption your first option. Unconditional love awaits, adopt a
+          pet today. <br />
+          Choose adoption, change a life.
+        </p>
+      </div>
+    </div>
+    <div class="hero-section">
+      <div class="heading">
+        <button (click)="onExplore()">Explore</button>
+      </div>
+    </div>
+    <div class="slogan2">
+      <div class="slogan">
+        <h1>
+          Find Your Perfect <br />
+          Paw-tner at the Shelter.
+        </h1>
+      </div>
+      <div class="discription">
+        <p>
+          Open your heart, and adopt a furry friend. Give a home, give hope.
+          <br />
+          Make adoption your first option. Unconditional love awaits, adopt a
+          pet today. <br />
+          Choose adoption, change a life.
+        </p>
+      </div>
+    </div>
+    <div class="slogan3">
+      <div class="slogan">
+        <h1>
+          Paws and Adopt: <br />
+          Make a Furry Friend for Life.
+        </h1>
+      </div>
+      <div class="discription">
+        <p>
+          Open your heart, and adopt a furry friend. Give a home, give hope.
+          <br />
+          Make adoption your first option. Unconditional love awaits, adopt a
+          pet today. <br />
+          Choose adoption, change a life.
+        </p>
+      </div>
+    </div>
+    <div class="slogan4">
+      <div class="slogan">
+        <h1>
+          Choose Love, Choose Adoption <br />
+          Adopt a Friend, Save a Heart.
+        </h1>
+      </div>
+      <div class="discription">
+        <p>
+          Open your heart, and adopt a furry friend. Give a home, give hope.
+          <br />
+          Make adoption your first option. Unconditional love awaits, adopt a
+          pet today. <br />
+          Choose adoption, change a life.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>

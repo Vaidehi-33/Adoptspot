@@ -1,0 +1,48 @@
+<p-toast></p-toast>
+<div class="add-post-container">
+  <h2 class="mypostheading">My Favorites</h2>
+</div>
+<div class="body">
+  <ng-container *ngIf="isLoading">
+    <app-card-skeleton />
+    <app-card-skeleton />
+    <app-card-skeleton />
+    <app-card-skeleton />
+    <app-card-skeleton />
+    <app-card-skeleton />
+  </ng-container>
+  <ng-container *ngIf="!isLoading">
+    <div class="message-container" *ngIf="response.data.length === 0">
+      <a routerLink="/home" class="message-link">
+        <h1 class="message">No favorites? Find your pet match now!</h1>
+      </a>
+    </div>
+    <div
+      class="card"
+      *ngFor="let favorite of response.data"
+      (click)="onCardClickHandler(favorite.Item.id)"
+    >
+      <img
+        [src]="favorite.Item.imageUrl"
+        [alt]="favorite.Item.name"
+        class="card-image"
+      />
+      <div class="card-content-container">
+        <div class="card-avatar">
+          <p>{{ favorite.Item.userInitial }}</p>
+        </div>
+        <div class="card-text-container">
+          <p class="card-title">{{ favorite.Item.name }}</p>
+          <p class="card-text">{{ favorite.Item.location }}</p>
+        </div>
+        <div
+          class="card-delete-container"
+          role="button"
+          (click)="onFavoriteDeleteHandler(favorite.Item.favoritesId)"
+        >
+          <mat-icon>delete</mat-icon>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

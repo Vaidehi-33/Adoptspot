@@ -1,0 +1,51 @@
+<p-toast></p-toast>
+<div class="add-post-container">
+  <h2 class="mypostheading">My Posts</h2>
+  <div class="add-post-button-container" (click)="AddPost()">
+    <mat-icon class="add-icon">add</mat-icon>
+  </div>
+</div>
+<div class="body">
+  <ng-container *ngIf="isLoading">
+    <app-card-skeleton></app-card-skeleton>
+    <app-card-skeleton></app-card-skeleton>
+    <app-card-skeleton></app-card-skeleton>
+    <app-card-skeleton></app-card-skeleton>
+    <app-card-skeleton></app-card-skeleton>
+    <app-card-skeleton></app-card-skeleton>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading">
+    <div class="message-container" *ngIf="data.length === 0">
+      <a routerLink="/new" class="message-link">
+        <h1 class="message">
+          Help a stray find it's home. Create your adoption post today!
+        </h1>
+      </a>
+    </div>
+    <div
+      class="card"
+      *ngFor="let post of data"
+      (click)="onCardClickHandler(post.id)"
+    >
+      <img [src]="post.imageUrl" [alt]="post.name" class="card-image" />
+      <div class="card-content-container">
+        <div class="card-avatar">
+          <p>{{ post.userInitial }}</p>
+        </div>
+        <div class="card-text-container">
+          <p class="card-title">{{ post.name }}</p>
+          <p class="card-text">{{ post.location }}</p>
+        </div>
+        <div
+          class="card-delete-container"
+          role="button"
+          (click)="confirm2(post.id, post.imageUrl); $event.stopPropagation()"
+        >
+          <mat-icon>delete</mat-icon>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<router-outlet></router-outlet>

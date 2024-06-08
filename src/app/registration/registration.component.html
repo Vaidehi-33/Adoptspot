@@ -1,0 +1,93 @@
+<body>
+  <nav>
+    <header>
+      <img
+        src="assets/pow.png"
+        width="30px"
+        height="25px"
+        style="margin-right: 5px"
+      />AdoptSpot
+    </header>
+  </nav>
+  <div class="box">
+    <form autocomplete="off" class="form" (submit)="signUp($event)">
+      <h1 class="title">Register</h1>
+      <div class="form-group">
+        <label>
+          <input
+            type="text"
+            [(ngModel)]="user.firstName"
+            name="firstName"
+            required
+          />
+          <span>Firstname</span>
+        </label>
+        <label>
+          <input
+            type="text"
+            [(ngModel)]="user.lastName"
+            name="lastName"
+            required
+          />
+          <span>Lastname</span>
+        </label>
+      </div>
+      <label>
+        <input
+          type="text"
+          name="mobile"
+          [(ngModel)]="user.mobileNumber"
+          required
+        />
+        <span>Mobile No.</span>
+      </label>
+      <label>
+        <input type="text" [(ngModel)]="user.email" name="email" required />
+        <span>Email</span>
+      </label>
+      <label>
+        <input type="text" [(ngModel)]="user.address" name="address" required />
+        <span>Address</span>
+      </label>
+      <div class="form-group">
+        <label>
+          <input type="text" [(ngModel)]="user.city" name="city" required />
+          <span>City</span>
+        </label>
+        <label>
+          <input type="text" name="state" [(ngModel)]="user.state" required />
+          <span>State</span>
+        </label>
+      </div>
+      <label>
+        <input type="text" name="country" [(ngModel)]="user.country" required />
+        <span>Country</span>
+      </label>
+      <label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="user.password"
+          name="password"
+          required
+        />
+        <span>Password</span>
+      </label>
+
+      <p-button
+        [class.isSubmitted]="isSubmitClicked"
+        class="submit"
+        size="small"
+        label="Submit"
+        [loading]="isSubmitClicked"
+        type="submit"
+      ></p-button>
+      <p class="signin">
+        Already have an account ?
+        <button type="submit" (click)="navigateToLogin()" class="a">
+          Signin
+        </button>
+      </p>
+    </form>
+  </div>
+</body>

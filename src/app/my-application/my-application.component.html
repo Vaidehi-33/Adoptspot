@@ -1,0 +1,83 @@
+<p-toast></p-toast>
+<div class="add-post-container">
+  <h2 class="mypostheading">My Applications</h2>
+</div>
+<div class="body">
+  <ng-container *ngIf="isLoading">
+    <app-card-skeleton />
+    <app-card-skeleton />
+    <app-card-skeleton />
+    <app-card-skeleton />
+    <app-card-skeleton />
+    <app-card-skeleton />
+  </ng-container>
+  <ng-container *ngIf="!isLoading">
+
+    <div class="message-container" *ngIf="data.data.length === 0">
+      <a routerLink="/home" class="message-link">
+        <h1 class="message">No applications? Find your pet match now!</h1>
+      </a>
+    </div>
+    <div
+      class="card"
+      *ngFor="let post of data.data"
+      (click)="onCardClickHandler(post.Item.id)"
+    >
+      <img
+        [src]="post.Item.imageUrl"
+        [alt]="post.Item.name"
+        class="card-image"
+      />
+      <div class="card-content-container">
+        <div class="card-avatar">
+          <p>{{ post.Item.userInitial }}</p>
+        </div>
+        <div class="card-text-container">
+          <p class="card-title">{{ post.Item.name }}</p>
+          <p class="card-text">{{ post.Item.location }}</p>
+        </div>
+        <div
+          class="card-delete-container"
+          role="button"
+          (click)="onDeleteHandler(post.Item.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<!-- <div class="add-post-container">
+  <h2 class="mypostheading">My Applications</h2>
+</div>
+<div class="body">
+  <div class="card-container">
+    <div class="message-container" *ngIf="data.data.length === 0">
+      <a routerLink="/home" class="message-link">
+        <h1 class="message">No applications? Find your pet match now!</h1>
+      </a>
+    </div>
+    <div class="card" *ngFor="let post of data.data">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ post.Item.name }}</mat-card-title>
+          <mat-card-subtitle>{{ post.Item.location }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="post.Item.imageUrl" alt="Photo of a Shiba Inu" width="400px" height="320px" />
+        <mat-card-content>
+
+          <div class="card-content">
+            <p>{{ post.Item.description }}</p>
+
+            <div class="delete-button-container" role="button" (click)="onDeleteHandler(post.Item.id)">
+
+              <mat-icon>delete</mat-icon>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div> -->

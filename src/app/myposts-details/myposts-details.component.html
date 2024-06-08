@@ -1,0 +1,74 @@
+<div class="page-container">
+    <ng-container *ngIf="isLoading">
+      <app-viewdetails-skeleton />
+    </ng-container>
+  
+    <ng-container *ngIf="!isLoading">
+      <p-toast></p-toast>
+      <p-confirmDialog></p-confirmDialog>
+
+      <p-dialog header="Confirmation!" [(visible)]="isApplyClicked" [modal]="true" [style]="{ width: '25rem' }"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+        <div style="width: 100%">
+          <textarea class="text-area" placeholder="Enter message" [(ngModel)]="message"
+            (input)="isMessageShort = false"></textarea>
+          <p class="message" [class.message-short]="isMessageShort">
+            <ng-container *ngIf="isMessageShort">Message must have </ng-container>min length: 20 characters, max length:
+            100 characters, current
+            length: {{ message.trim().length }} characters
+          </p>
+        </div>
+      </p-dialog>
+  
+      <div class="main-container">
+        <div class="carousel-details-container">
+          <app-carousel [imageUrl]="details.post.imageUrl" />
+          <div class="text-container">
+            <h1 class="heading" style="text-align: center">
+              {{ details.post.name }}
+            </h1>
+
+            <div class="description-container">
+              <app-description title="Age" [description]="details.post.age + ' months'"
+                class="description-item"></app-description>
+  
+              <app-description title="Gender" [description]="capitalizeFirstLetter(details.post.gender)"
+                class="description-item"></app-description>
+  
+              <app-description title="Type" [description]="capitalizeFirstLetter(details.post.animalType)"
+                class="description-item"></app-description>
+  
+              <app-description title="Breed" [description]="capitalizeFirstLetter(details.post.breed)"
+                class="description-item"></app-description>
+  
+              <app-description title="Location" [description]="details.post.location"
+                class="description-item"></app-description>
+  
+              <app-description title="Posted on" [description]="details.post.createdAt"
+                class="description-item"></app-description>
+            </div>
+  
+  
+          </div>
+        </div>
+
+        <div class="buttons-container center-buttons" >
+            <p-button (onClick)="onClick(id)">Applicants List</p-button>
+            <div class="inline-form-field" >
+                <input type="file" id="fileInput" (change)="onUpload($event)" class="hidden-input" required />
+                <label for="fileInput" class="file-input-label" >
+                  <mat-icon>attach_file</mat-icon>
+        
+                  <span *ngIf="!dogNameImg">Choose a file</span>
+                  <span *ngIf="dogNameImg">{{dogNameImg}}</span>
+                </label>
+              </div>
+          </div>
+      </div>
+    </ng-container>
+    
+    <div class="gallery">
+    <div class="img-gal" *ngFor="let img of images">
+        <img class="images" [src]="(img)">
+  </div>
+</div>

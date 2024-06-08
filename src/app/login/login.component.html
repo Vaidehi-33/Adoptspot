@@ -1,0 +1,46 @@
+<body>
+  <nav>
+    <header>
+      <img
+        src="assets/pow.png"
+        width="30px"
+        height="25px"
+        style="margin-right: 5px"
+      />AdoptSpot <br />
+      <h1><br />Welcome Back !</h1>
+    </header>
+  </nav>
+  <div class="box">
+    <form autocomplete="off" (submit)="signIn($event)" class="form">
+      <h1 class="title">Login</h1>
+      <label>
+        <input type="text" [(ngModel)]="user.email" name="email" required />
+        <span>Email</span>
+      </label>
+      <label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="user.password"
+          name="password"
+          required
+        />
+        <span>Password</span>
+      </label>
+      <!-- <button class="submit" type="submit">Submit</button> -->
+
+      <p-button
+        [class.isSubmitted]="isLoginClicked"
+        class="submit"
+        size="small"
+        label="Submit"
+        [loading]="isLoginClicked"
+        type="submit"
+      ></p-button>
+      <p class="signup">
+        Create a new account.
+        <button (click)="navigateToRegistration()" class="a">Signup</button>
+      </p>
+    </form>
+  </div>
+</body>

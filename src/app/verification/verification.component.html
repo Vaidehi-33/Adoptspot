@@ -1,0 +1,29 @@
+<body>
+  <nav>
+    <header>
+      <img
+        src="assets/pow.png"
+        width="30px"
+        height="25px"
+        style="margin-right: 5px"
+      />AdoptSpot
+    </header>
+  </nav>
+  <div class="box">
+    <form autocomplete="off" (submit)="confirmSignUp($event)" class="form">
+      <h1 class="title">Verification</h1>
+      <label>
+        <input type="text" [(ngModel)]="user.code" name="code" required />
+        <span>Code</span>
+      </label>
+      <p-button
+        [class.isSubmitted]="isSubmitClicked"
+        class="submit"
+        size="small"
+        label="Submit"
+        [loading]="isSubmitClicked"
+        type="submit"
+      ></p-button>
+    </form>
+  </div>
+</body>
